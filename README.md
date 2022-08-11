@@ -11,7 +11,7 @@
 ### Filters
 - Crop `magick mogrify -crop 300x300+150+150 -path ./cropped *.png`
 - Grayscale `magick <img_in> -set colorspace Gray -separate -evaluate-sequence Mean <img_out>`
-- Resize magick `mogrify ./ -resize 20% -quality 80  *.png`
+- Resize `magick mogrify ./ -resize 20% -quality 80  *.png`
 ### Other
 - Make icon `magick Capture.png -define icon:auto-resize=256,64,48,32,16 capture.ico`
 
