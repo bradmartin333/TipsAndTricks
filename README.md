@@ -1,4 +1,5 @@
 # PowerShell
+### Regex
 - Regex from file `Get-Content .\regex15.txt | Select-String -Pattern "x*[#:.]y*" | Write-Host`
 - Find and replace regex groups `(Get-Content .\regex25.txt) -replace '(?<a>([0-9]+))x(?<b>([0-9]+))','${a} px, ${b} px'`
   - The order of parentheses and <> and $ are very important here
@@ -20,6 +21,13 @@
   800 px, 600 px
   1024 px, 768 px
   ```
+- Output specific groups
+```
+> 'my name is "rodeo" and I like "tacos"' | Select-String -Pattern '"(.+?)"' | % {"$($_.matches.groups[0])"}
+
+> "rodeo"
+```
+### File Management
 - Delete files that match pattern ``Get-ChildItem | Where-Object Name -Like '*`~*' | ForEach-Object { Remove-Item -LiteralPath $_.Name }``
 
 # ImageMagick
