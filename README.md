@@ -1,5 +1,25 @@
 # PowerShell
 - Regex from file `Get-Content .\regex15.txt | Select-String -Pattern "x*[#:.]y*" | Write-Host`
+- Find and replace regex groups `(Get-Content .\regex25.txt) -replace '(?<a>([0-9]+))x(?<b>([0-9]+))','${a} px, ${b} px'`
+  - The order of parentheses and <> and $ are very important here
+  - This example takes
+  ```
+  1280x720
+  1920x1080
+  1600x900
+  1280x1024
+  800x600
+  1024x768
+  ```
+  and returns
+  ```
+  1280 px, 720 px
+  1920 px, 1080 px
+  1600 px, 900 px
+  1280 px, 1024 px
+  800 px, 600 px
+  1024 px, 768 px
+  ```
 - Delete files that match pattern ``Get-ChildItem | Where-Object Name -Like '*`~*' | ForEach-Object { Remove-Item -LiteralPath $_.Name }``
 
 # ImageMagick
