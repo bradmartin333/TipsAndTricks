@@ -30,6 +30,9 @@
 ### File Management
 - Delete files that match pattern ``Get-ChildItem | Where-Object Name -Like '*`~*' | ForEach-Object { Remove-Item -LiteralPath $_.Name }``
 
+### Parsing
+- JSON `$users = $response | ConvertFrom-Json`
+
 # ImageMagick
 ### GIFs
 - Make `magick -delay 20 *.png movie.gif`
