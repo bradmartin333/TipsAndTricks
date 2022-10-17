@@ -33,6 +33,9 @@
 ### Parsing
 - JSON `$users = $response | ConvertFrom-Json`
 
+### USB Devices
+- Get video sources `Get-PnpDevice -PresentOnly | Where-Object { $_.Description -match '.*(?:Video|Camera).*' }`
+
 # ImageMagick
 ### GIFs
 - Make `magick -delay 20 *.png movie.gif`
