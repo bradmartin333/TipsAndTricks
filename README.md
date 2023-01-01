@@ -53,7 +53,7 @@
 - Publish NuGet `dotnet nuget push <package>.nupkg --api-key <key> --source https://api.nuget.org/v3/index.json`
 
 # FFMPEG
-- Trim `ffmpeg -ss 00:07 -to 00:59 -i <input> -c:v copy -an <output>`
+- Trim `ffmpeg -ss 00:07 -to 00:59 -i <input> -c:v copy -c:a copy <output>`
 - Add timestamp `ffmpeg -i input.mp4 -filter:v drawtext="fontfile=/Windows/Fonts/cour.ttf:fontsize=150:fontcolor='white':box=1:boxcolor='black@0.5':boxborderw=5:timecode='00\:00\:00;00':timecode_rate=(30*1000/1001):x=(w-text_w):y=(h-text_h)" output.mp4`
 - Strip audio `ffmpeg -i $input_file -c copy -an $output_file`
 - Equalizers `ffmpeg -i .\DSCN2375.MOV -vf eq=brightness=0.5:saturation=2 -c:a copy output3.mov` see [the docs](https://ffmpeg.org/ffmpeg-filters.html#eq)
